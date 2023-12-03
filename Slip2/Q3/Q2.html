@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>Employee Registration</title>
+    <script>
+        function validate(){
+            const d = new  Date();
+            var DOB = document.getElementById("dob").value;
+             var DOB1 =new Date(DOB);
+            var jd = document.getElementById("joiningDate").value;
+            var jd1 = new Date(jd);
+            
+            var Salary = document.getElementById("salary").value;
+
+            if (!(DOB1 < d )){
+                alert("DOB should be less than current date ");
+                return false;
+            }
+            else if (!(jd1 >= d)){
+                alert("joining date should be greater than or equal to  current date ");
+                return false;
+
+            }
+            else if (!(Salary >= 10000)){
+                alert("salary should be greater than 10000");
+                return false;
+
+            }
+            alert("Verification Complete");
+            return true;
+        }
+    </script>
+</head>
+<body bgcolor="white">
+    <form>
+        <h2>Employee registration</h2>
+        Name:<input type="text" id="name" /><br>
+        DOB:<input type="date" id="dob" /><br>
+        Joining Date:<input type="date" id="joiningDate" /><br>
+        Salary:<input type="number" id="salary"><br>
+        <input type="submit" value="Submit" onclick = validate()>
+    </form>
+   
+</body>
+</html>
